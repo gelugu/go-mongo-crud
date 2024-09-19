@@ -4,6 +4,5 @@ db:
 db-down:
 	docker compose down
 
-tests: db
+tests:
 	go test -v ./tests
-	make db-down
