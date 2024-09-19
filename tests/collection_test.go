@@ -48,8 +48,8 @@ func TestCollectionCRUD(t *testing.T) {
 	}
 
 	// **Update**
-	update := bson.M{"value": 100}
-	err = collection.Update(filter, update)
+	data := TestModel{Value: 100}
+	err = collection.Update(filter, data)
 	if err != nil {
 		t.Fatalf("Update failed: %v", err)
 	}

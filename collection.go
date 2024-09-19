@@ -62,8 +62,8 @@ func (c *Collection[T]) Read(filter bson.M) (*T, error) {
 }
 
 // Update modifies an existing item matching the filter.
-func (c *Collection[T]) Update(filter bson.M, update bson.M) error {
-	result, err := c.collection.UpdateOne(context.Background(), filter, bson.M{"$set": update})
+func (c *Collection[T]) Update(filter bson.M, data T) error {
+	result, err := c.collection.UpdateOne(context.Background(), filter, bson.M{"$set": data})
 	if err != nil {
 		return fmt.Errorf("failed to update item: %v", err)
 	}
