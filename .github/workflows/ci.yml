@@ -34,7 +34,7 @@ jobs:
           done
 
       - name: Run tests
-        run: make tests
+        run: make test
 
       - name: Clean up
         run: make db-down
